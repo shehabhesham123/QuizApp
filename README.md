@@ -1,5 +1,7 @@
 # Flutter Quiz App
 
+<img src="Quiz.png" alt="Customer Interface" height="500px">
+
 Welcome to the Flutter Quiz App! This is a simple quiz application built using Flutter. If you're new to Flutter or this is your first Flutter app, you're in the right place. This README will guide you through setting up and running the app on your local machine.
 
 ## Features
