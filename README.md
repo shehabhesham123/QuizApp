@@ -64,8 +64,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgements
 
 - Thanks to the Flutter team for providing an excellent framework for building cross-platform apps.
-- Special thanks to [name], [name], and [name] for their contributions to this project.
-
-## Contact
-
-For questions or support, feel free to contact [your-name] at [your-email].
