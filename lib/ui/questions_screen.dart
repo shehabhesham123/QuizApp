@@ -42,6 +42,7 @@ class _QuestionsState extends State<QuestionsScreen> {
             ...currentQuestion.shuffledAnswars.map(
               (answar) => ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                   padding:
                       const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                 ),

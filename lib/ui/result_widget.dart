@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:section2/ui/question_Idx.dart';
 
 class ResutlWidget extends StatelessWidget {
   const ResutlWidget({required this.questionResult, super.key});
@@ -10,15 +11,12 @@ class ResutlWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          ((questionResult['QuestionIndex'] as int) + 1).toString(),
-          style: GoogleFonts.lato(
-            color: (questionResult['CorrectAnswar'] ==
-                    questionResult['UserAnswar'])
-                ? Colors.green
-                : Colors.red,
-            fontSize: 15,
-          ),
+        QuestionIdx(
+          questionIndex: ((questionResult['QuestionIndex'] as int) + 1),
+          color:
+              (questionResult['CorrectAnswar'] == questionResult['UserAnswar'])
+                  ? Colors.green
+                  : Colors.red,
         ),
         const SizedBox(
           width: 30,
