@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:section2/ui/result.dart';
-import 'package:section2/ui/start.dart';
-import 'package:section2/ui/questions.dart';
+import 'package:section2/ui/result_screen.dart';
+import 'package:section2/ui/start_screen.dart';
+import 'package:section2/ui/questions_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -14,6 +14,7 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   String screenTriger = 'StartScreen';
+  List<String>? selectedAnswars;
 
   @override
   Widget build(BuildContext context) {
@@ -42,20 +43,26 @@ class _QuizState extends State<Quiz> {
       if (screenTriger == 'StartScreen') {
         screenTriger = 'QuestionsScreen';
       } else if (screenTriger == 'QuestionsScreen') {
+        this.selectedAnswars = selectedAnswars;
         screenTriger = 'ResultScreen';
+      }
+      else{
+      screenTriger = 'QuestionsScreen';
       }
     });
   }
 
   Widget get currentScreen {
     if (screenTriger == 'StartScreen') {
-      return StartScreen(onClick: switchScreen);
+      return StartScreen(
+        onClick: switchScreen,
+      );
     } else if (screenTriger == 'QuestionsScreen') {
       return QuestionsScreen(
         onQuizEnd: switchScreen,
       );
     } else {
-      return const ResultScreen();
+      return ResultScreen(selectedAnswars: selectedAnswars!,onRestartClick: switchScreen,);
     }
   }
 }
